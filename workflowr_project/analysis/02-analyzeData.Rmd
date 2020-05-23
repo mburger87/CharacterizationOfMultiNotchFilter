@@ -9,7 +9,28 @@ editor_options:
 
 ## Introduction
 
-```{r}
+Read in the processed data
 
+```{r}
+iris_dat <- readRDS("data/iris.rds")
+source("code/helper.R")
+```
+
+## Compute a PCA
+
+We use the "prcomp" function in base R:
+
+```{r PCA}
+cur_pca <- prcomp(iris_dat[,1:4], scale. = TRUE)
+
+plot(cur_pca$x[,1],cur_pca$x[,2])
+```
+
+## Plot the PCA 
+
+using the custom function
+
+```{r plot-PCA}
+my_plotPCA(cur_pca, colour_by = iris$Species)
 ```
 
