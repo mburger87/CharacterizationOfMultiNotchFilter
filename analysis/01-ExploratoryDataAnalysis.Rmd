@@ -1,0 +1,30 @@
+---
+title: "01-ExploratoryDataAnalysis"
+author: "Marcel Burger"
+date: "2020-06-18"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## this markdown file reads data from .H5 files.
+## it provides visualization for exloratory data analysis.
+
+```{r read in data from .H5 files}
+RepositoryPath <- "C:/Users/MarcelB/GitHubs/"
+ProjectPath <- "CharacterizationOfMultiNotchFilter/"
+DataPath <- "data/2020_06_01/"
+setwd(paste0(RepositoryPath, ProjectPath))
+source("code/Auxiliary.R")
+WorkDir <- paste0(RepositoryPath, ProjectPath, DataPath)
+Data <- readH5File(WorkDir = WorkDir, SubDirPattern = "Volts")
+```
+
+```{r extract data series of interest}
+DataToPlot <- extractDataSeries(Data = Data, IsotopeList = "[140Ce]+")
+```
+
+```{r plot data series for an isotope of interest}
+plotDataSeries(Data = DataToPlot, IsotopeOfInterest = "[140Ce]+")
+```
+
