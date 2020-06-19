@@ -7,8 +7,8 @@ editor_options:
   chunk_output_type: console
 ---
 
-## this markdown file reads data from .H5 files.
-## it provides visualization for exloratory data analysis.
+## This markdown file reads data from .H5 files.
+## It provides visualization for exploratory data analysis.
 
 ```{r read in data from .H5 files}
 RepositoryPath <- "C:/Users/MarcelB/GitHubs/"

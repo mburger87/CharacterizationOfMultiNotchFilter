@@ -3,6 +3,8 @@ output_dir: ../docs
 navbar:
   title: "CharacterizationOfMultiNotchFilter"
   left:
+  - text: DataAnalysis
+    href: 01-ExploratoryDataAnalysis.html
   - text: Home
     href: index.html
   - text: About
